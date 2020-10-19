@@ -1,6 +1,7 @@
 name: Visitor Badge
 description: Add a badge to count visitors for your issues and PRs.
 author: bubkoo <bubkoo.wy@gmail.com>
+
 inputs:
   GITHUB_TOKEN:
     description: Your GitHub token for authentication.
@@ -14,9 +15,11 @@ inputs:
   label:
     description: The label of the badge. Default is `'visitors'`.
     required: false
+
 runs:
   using: node12
   main: dist/index.js
+
 branding:
   icon: type
   color: blue # gray-dark purple red orange green blue yellow black white
