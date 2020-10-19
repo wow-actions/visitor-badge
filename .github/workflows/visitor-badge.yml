@@ -1,9 +1,9 @@
-name: Slash Commands
-
+name: Visitor Badge
 on:
-  issue_comment:
-    types: [created]
-
+  pull_request:
+    types: [opened]
+  issues:
+    types: [opened]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,4 +18,3 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONFIG_FILE: .github/slash-commands.yml

@@ -1,25 +1,23 @@
-name: Custom Slash Commands
+name: Visitor Badge
 description: Perform commands when Issues or Pull Requests are commented with slash commands.
 author: bubkoo <bubkoo.wy@gmail.com>
 
 inputs:
   GITHUB_TOKEN:
-    description: Your GitHub token for authentication
+    description: Your GitHub token for authentication.
     required: true
-  CONFIG_FILE:
-    description: Config file path relative to your repo's root.
+  color:
+    description: The color or the badge. You can use any valid HEX color or pick from a predefined set of named colors. Default is `blue`. Note that the HEX colors should be used without `#` symbol prefix.
     required: false
-
-outputs:
-  command:
-    description: Slash command.
-  args:
-    description: Args of the command.
-
+  style:
+    description: The style of the badge. Support `flat`, `flat-square	`, `plastic`. Default is `flat`.
+    required: false
+  label:
+    description: The label of the badge. Default is `'visitors'`.
+    required: false
 runs:
   using: node12
   main: dist/index.js
-
 branding:
   icon: command
-  color: yellow # gray-dark purple red orange green blue yellow black white
+  color: blue # gray-dark purple red orange green blue yellow black white
