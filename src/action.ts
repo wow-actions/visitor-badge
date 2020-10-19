@@ -24,10 +24,10 @@ export namespace Action {
       const label = core.getInput('label') || 'visitors'
       const color = core.getInput('color')
       const style = core.getInput('style')
+      const uuid = `${owner}-${repo}-${type}-${payload.number}`
 
-      let badge = `![${label}](https://komarev.com/ghpvc/?username=${owner}.${repo}.${type}.${
-        payload.number
-      })&label=${label.replace(/\s+/g, '+')}`
+      let badge = `![${label}](https://komarev.com/ghpvc?username=${uuid}`
+
       if (color) {
         badge += `&color=${color}`
       }
@@ -35,6 +35,12 @@ export namespace Action {
       if (style) {
         badge += `&style=${style}`
       }
+
+      if (label) {
+        badge += `&label=${label.replace(/\s+/g, '+')}`
+      }
+
+      badge += ')'
 
       const octokit = Util.getOctokit()
       octokit.issues.update({
