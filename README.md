@@ -2,6 +2,8 @@
 
 > A Github Action to add a badge to count visitors for your issues and PRs.
 
+![screenshot](https://github.com/bubkoo/visitor-badge/blob/master/screenshot.jpg?raw=true)
+
 ## Usage
 
 Create `.github/workflows/visitor-badge.yml` in the default branch:

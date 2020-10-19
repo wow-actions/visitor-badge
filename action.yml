@@ -1,7 +1,6 @@
 name: Visitor Badge
-description: Perform commands when Issues or Pull Requests are commented with slash commands.
+description: Add a badge to count visitors for your issues and PRs.
 author: bubkoo <bubkoo.wy@gmail.com>
-
 inputs:
   GITHUB_TOKEN:
     description: Your GitHub token for authentication.
@@ -19,5 +18,5 @@ runs:
   using: node12
   main: dist/index.js
 branding:
-  icon: command
+  icon: type
   color: blue # gray-dark purple red orange green blue yellow black white
