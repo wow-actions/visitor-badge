@@ -9,8 +9,10 @@ export namespace Action {
       const payload = context.payload.issue || context.payload.pull_request
 
       if (
-        !Util.isValidEvent('issues', 'opened') ||
-        !Util.isValidEvent('pull_request', 'opened') ||
+        !(
+          Util.isValidEvent('issues', 'opened') ||
+          Util.isValidEvent('pull_request', 'opened')
+        ) ||
         !payload
       ) {
         core.warning('This action is only supposed on issues or PRs opened.')
