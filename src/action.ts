@@ -5,7 +5,7 @@ import { Util } from './util'
 export namespace Action {
   export async function run() {
     try {
-      const context = github.context
+      const { context } = github
       const payload = context.payload.issue || context.payload.pull_request
 
       if (
@@ -43,7 +43,7 @@ export namespace Action {
       badge += ')'
 
       const octokit = Util.getOctokit()
-      octokit.issues.update({
+      octokit.rest.issues.update({
         repo,
         owner,
         issue_number: payload.number,

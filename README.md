@@ -1,8 +1,8 @@
 # Visitor Badge
 
-> A Github Action to add a badge to count visitors for your issues and PRs.
+Adds a badge to count visitors for your issues and PRs.
 
-![screenshot](https://github.com/bubkoo/visitor-badge/blob/master/screenshot.jpg?raw=true)
+![screenshot](https://github.com/wow-actions/visitor-badge/blob/master/screenshot.jpg?raw=true)
 
 ## Usage
 
@@ -19,7 +19,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/visitor-badge@v1
+      - uses: wow-actions/visitor-badge@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
